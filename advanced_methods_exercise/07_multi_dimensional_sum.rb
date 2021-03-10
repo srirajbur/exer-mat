@@ -1,6 +1,9 @@
 # Write a method, multi_dimensional_sum(array), that accepts a multidimensional array as an arg 
 # and returns the sum of all numbers in the array.
-
+def multi_dimensional_sum(array)
+  new_arr = array.flatten.sum
+  return new_arr
+end
 
 arr_1 = [
     [4, 3, 1],
