@@ -6,6 +6,11 @@
 # to the object_id of the returned string. The exact object_ids you get back don't matter. We just want the ids
 # to be the same before and after calling your method.
 
+def replace_char_at!(str, char, idx)
+  str[idx] = char
+  str
+end
+
 
 str_1 = "hello"
 p str_1.object_id                       # => 70120944788380
