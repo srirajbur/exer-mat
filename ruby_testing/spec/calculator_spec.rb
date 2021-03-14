@@ -30,5 +30,22 @@ describe Calculator do
       calculator = Calculator.new
       expect(calculator.subtract(5, 2)).to eql(3)
     end
+
+    it "returns two numbers subtracted" do
+      calculator = Calculator.new
+      expect(calculator.subtract(97, 17)).to eql(80)
+    end
+  end
+
+  describe "#divide" do
+    it "returns first num divided by second num" do
+      calculator = Calculator.new
+      expect(calculator.divide(66, 3)).to eql(22)
+    end
+
+    it "returns first num divided by second num" do
+      calculator = Calculator.new
+      expect(calculator.divide(100, 4)).to eql(25)
+    end
   end
 end

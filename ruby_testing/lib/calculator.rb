@@ -11,7 +11,7 @@ class Calculator
     a - b
   end 
 
-  def divide
-
+  def divide(a, b)
+    a / b
   end
 end
