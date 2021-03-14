@@ -7,9 +7,9 @@ class Calculator
     a * b.reduce{|acc, num| acc*num}
   end
 
-  def subtract
-
-  end
+  def subtract(a, b)
+    a - b
+  end 
 
   def divide
 
