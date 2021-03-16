@@ -10,6 +10,10 @@ def repeat(str, n)
   new
 end
 
+def average_array(arr)
+  arr.sum / (arr.length * 1.0)
+end
+
 def yell(str)
   str.upcase + "!"
 end
@@ -24,6 +28,5 @@ def alternating_case(sentence)
       new << ele.downcase
     end
   end
-
   new.join(" ")
 end
