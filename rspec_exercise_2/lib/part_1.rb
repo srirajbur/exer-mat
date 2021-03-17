@@ -42,3 +42,23 @@ def star_vowels(word)
 
   new_str
 end
+
+def power_of_two?(n)
+  product = 1
+  while product < n
+
+    product *= 2
+  end
+
+  product == n
+end
+
+def merge(hash1, hash2)
+  new = {}
+
+  hash1.each {|k, v| new[k] = v}
+  hash2.each {|k, v| new[k] = v}
+
+  new
+
+end
