@@ -1,7 +1,7 @@
 def palindrome?(string)
-  new = ""
+  new = ''
   i = string.length - 1
-  while i >= 0 
+  while i >= 0
     new << string[i]
     i -= 1
   end
@@ -13,7 +13,7 @@ def substrings(string)
   i = 0
   sub_strings = []
   while i < string.length
-    new = ""
+    new = ''
     (i...string.length).each do |idx|
       new += string[idx]
       sub_strings << new
@@ -25,5 +25,5 @@ end
 
 def palindrome_substrings(string)
   sub_strings = substrings(string)
-  sub_strings.select {|sub| sub.length > 1 && palindrome?(sub)}
-end 
+  sub_strings.select { |sub| sub.length > 1 && palindrome?(sub) }
+end
