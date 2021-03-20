@@ -10,3 +10,17 @@ end
 def count_positive_subarrays(array)
   array.count { |arr| arr.sum > 0 }
 end
+
+def aba_translate(word)
+  new_word = ""
+  word.each_char do |char|
+    if "aeiou".include?(char.downcase)
+      new_word += char + "b" + char
+    else
+      new_word += char
+    end
+  end
+
+  new_word
+
+end
