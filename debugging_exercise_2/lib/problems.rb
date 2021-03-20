@@ -42,8 +42,15 @@ def dupe_indices(array)
 
 end
 
-# it "should return an hash where keys are the elements that were repeated in the array and values are the indices where that element appears" do
-#   expect(dupe_indices(["a", "b", "c", "c", "b"])).to eq({"b"=>[1,4], "c"=>[2,3]})
-#   expect(dupe_indices(["a", "a", "c", "c", "b", "c"])).to eq({"a"=>[0,1], "c"=>[2,3,5]})
-#   expect(dupe_indices(["a", "b", "c"])).to eq({})
-# end
+def ana_array(arr1, arr2)
+  return false if arr1.length != arr2.length
+
+  ele_count(arr1) == ele_count(arr2)
+
+end
+
+def ele_count(arr)
+  count = Hash.new(0)
+  arr.each { |word| count[word] += 1 }
+  count
+end
