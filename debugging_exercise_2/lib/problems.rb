@@ -15,3 +15,14 @@ def largest_prime_factor(num)
     end 
   end
 end
+
+def unique_chars?(string)
+  storage = ""
+  string.each_char do |char|
+    if storage.include?(char)
+      return false
+    end
+    storage += char
+  end 
+  true
+end
