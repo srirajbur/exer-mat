@@ -11,3 +11,7 @@ def no_valid_url?(urls)
 
   end
 end
+
+def any_passing_students?(students)
+  students.any? { |student| (student[:grades].sum / student[:grades].length * 1.0) >= 75 }
+end
