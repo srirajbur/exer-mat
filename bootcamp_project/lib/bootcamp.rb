@@ -50,4 +50,8 @@ class Bootcamp
     end
   end
 
+  def num_grades(student)
+    @grades[student].length
+  end
+
 end
