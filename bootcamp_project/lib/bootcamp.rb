@@ -8,4 +8,7 @@ class Bootcamp
     @grades = Hash.new { |hash, key| hash[key] = [] }
   end
 
+  def name 
+    @name
+  end
 end
