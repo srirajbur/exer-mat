@@ -24,4 +24,8 @@ class Bootcamp
     @students
   end
 
+  def hire(new_teacher)
+    @teachers << new_teacher
+  end
+
 end
