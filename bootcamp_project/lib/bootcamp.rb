@@ -64,4 +64,9 @@ class Bootcamp
     end
   end
 
+  def student_to_teacher_ratio
+    ratio = @students.length / @teachers.length
+    ratio.floor
+  end
+
 end
