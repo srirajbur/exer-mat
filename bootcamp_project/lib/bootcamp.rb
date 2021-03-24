@@ -37,4 +37,8 @@ class Bootcamp
     end
   end
 
+  def enrolled?(student)
+    @students.include?(student)
+  end
+
 end
