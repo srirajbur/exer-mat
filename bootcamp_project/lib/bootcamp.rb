@@ -28,4 +28,13 @@ class Bootcamp
     @teachers << new_teacher
   end
 
+  def enroll(new_student)
+    if @students.length < @student_capacity
+      @students << new_student
+      return true
+    else 
+      return false
+    end
+  end
+
 end
