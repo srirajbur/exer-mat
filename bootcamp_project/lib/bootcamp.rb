@@ -11,4 +11,17 @@ class Bootcamp
   def name 
     @name
   end
+
+  def slogan
+    @slogan
+  end
+
+  def teachers
+    @teachers
+  end
+
+  def students
+    @students
+  end
+
 end
