@@ -41,4 +41,13 @@ class Bootcamp
     @students.include?(student)
   end
 
+  def add_grade(student, grade)
+    if enrolled?(student)
+      @grades[student] << grade
+      return true
+    else
+      return false
+    end
+  end
+
 end
