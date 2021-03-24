@@ -54,4 +54,14 @@ class Bootcamp
     @grades[student].length
   end
 
+  def average_grade(student)
+    total_num_grades = @grades[student].length
+    if total_num_grades > 0
+      average = @grades[student].sum / total_num_grades
+      return average.floor
+    else
+      return nil
+    end
+  end
+
 end
