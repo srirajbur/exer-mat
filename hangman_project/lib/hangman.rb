@@ -1,5 +1,6 @@
 class Hangman
   DICTIONARY = ["cat", "dog", "bootcamp", "pizza"]
+  attr_reader :guess_word, :attempted_chars, :remaining_incorrect_guesses
 
   def self.random_word
     DICTIONARY.sample
@@ -10,18 +11,6 @@ class Hangman
     @guess_word = @secret_word.split('').map { |char| "_" }
     @attempted_chars = []
     @remaining_incorrect_guesses = 5
-  end
-
-  def guess_word
-    @guess_word
-  end 
-
-  def attempted_chars
-    @attempted_chars
-  end
-
-  def remaining_incorrect_guesses
-    @remaining_incorrect_guesses
   end
 
   def already_attempted?(char)
@@ -47,7 +36,8 @@ class Hangman
 
   def try_guess(char)
     if self.already_attempted?(char)
-      puts 'that has already been attempted'
+      puts "Char #{char} has already been attempted"
+      print "\n"
       return false
     else
       @attempted_chars << char
