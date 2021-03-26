@@ -42,4 +42,13 @@ class Array
   def my_index(ele)
     self.find_index(ele)
   end
+
+  def my_uniq
+    unique = []
+    self.each do |ele|
+      unique.include?(ele)? next : unique << ele
+    end
+
+    unique
+  end
 end
