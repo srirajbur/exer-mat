@@ -60,4 +60,38 @@ class Hangman
     end
   end 
 
+  def ask_user_for_guess
+    puts 'Enter a char:'
+    user_input = gets.chomp
+    return try_guess(user_input)
+  end
+
+  def win?
+    @guess_word = @guess_word.join('')
+    if @guess_word == @secret_word
+      puts "WIN"
+      return true
+    else
+      return false
+    end
+  end
+
+  def lose?
+    if @remaining_incorrect_guesses == 0
+      puts "LOSE"
+      return true
+    else
+      return false
+    end
+  end
+
+  def game_over?
+    if win? || lose?
+      puts @secret_word
+      return true
+    else
+      false
+    end
+  end
+
 end
