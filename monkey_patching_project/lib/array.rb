@@ -35,7 +35,11 @@ class Array
         num += 1
       end
     end
-    
+
     num
+  end
+
+  def my_index(ele)
+    self.find_index(ele)
   end
 end
