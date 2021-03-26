@@ -27,4 +27,15 @@ class Array
     self.each { |ele| count[ele] += 1 }
     count
   end
+
+  def my_count(char)
+    num = 0
+    self.each do |ele|
+      if ele == char
+        num += 1
+      end
+    end
+    
+    num
+  end
 end
