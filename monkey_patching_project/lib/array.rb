@@ -65,4 +65,10 @@ class Array
 
     new
   end
+
+  def span
+    return nil if self.empty?
+
+    self.max - self.min
+  end
 end
