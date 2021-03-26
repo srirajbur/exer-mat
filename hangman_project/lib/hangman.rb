@@ -44,5 +44,20 @@ class Hangman
       @guess_word[index] = char
     end
   end
-  
+
+  def try_guess(char)
+    if already_attempted?(char)
+      puts 'that has already been attempted'
+      return false
+    else
+      @attempted_chars << char
+      indices = get_matching_indices(char)
+      if indices.empty?
+        @remaining_incorrect_guesses -= 1
+      end
+      fill_indices(char, indices) 
+      return true 
+    end
+  end 
+
 end
