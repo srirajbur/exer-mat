@@ -51,4 +51,18 @@ class Array
 
     unique
   end
+
+  def my_transpose
+    new = []
+
+    (0...self.length).each do |row|
+      new_row = []
+      (0...self.length).each do |col|
+        new_row << self[col][row]
+      end
+      new << new_row
+    end
+
+    new
+  end
 end
