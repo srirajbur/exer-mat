@@ -84,7 +84,7 @@ class Hangman
       puts "The word was #{@secret_word}"
       return true
     else
-      false
+      return false
     end
   end
 
