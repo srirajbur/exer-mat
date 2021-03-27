@@ -33,4 +33,15 @@ class Hotel
       puts "sorry, room does not exist"
     end
   end
+
+  def has_vacancy?
+    @rooms.values.any? { |room| room.available_space > 0}
+  end
+
+  def list_rooms
+    @rooms.each do |room_name, room|
+
+      puts "#{room_name} : #{room.available_space}"
+    end
+  end
 end
