@@ -19,7 +19,7 @@ class Startup
   end
 
   def hire(employee_name, title)
-    if valid_title?(title)
+    if self.valid_title?(title)
       @employees << Employee.new(employee_name, title)
     else
       raise "title is invalid"
@@ -38,6 +38,10 @@ class Startup
     else
       raise "Not enough funds to pay employee"
     end
+  end
+
+  def payday
+    @employees.each { |employee| self.pay_employee(employee) }
   end
 
 end
