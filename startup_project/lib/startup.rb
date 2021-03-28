@@ -44,4 +44,18 @@ class Startup
     @employees.each { |employee| self.pay_employee(employee) }
   end
 
+  def average_salary
+    total = 0
+    @employees.each do |employee|
+      salary = @salaries[employee.title]
+      total += salary
+    end
+    total / @employees.length
+  end
+
+  def close 
+    @funding = 0
+    @employees = []
+  end
+
 end
