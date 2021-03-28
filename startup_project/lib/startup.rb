@@ -58,4 +58,15 @@ class Startup
     @employees = []
   end
 
+  def acquire(other_startup)
+    @funding += other_startup.funding
+    other_startup.salaries.each do |title, amount|
+      if !@salaries.has_key?(title)
+        @salaries[title] = amount
+      end
+    end
+    other_startup.employees.each { |employee| @employees << employee }
+    other_startup.close
+  end
+
 end
