@@ -13,4 +13,21 @@ class Startup
   def valid_title?(title)
     @salaries.has_key?(title)
   end
+
+  def >(other_startup)
+    self.funding > other_startup.funding
+  end
+
+  def hire(employee_name, title)
+    if valid_title?(title)
+      @employees << Employee.new(employee_name, title)
+    else
+      raise "title is invalid"
+    end
+  end
+
+  def size
+    @employees.length
+  end
+  
 end
