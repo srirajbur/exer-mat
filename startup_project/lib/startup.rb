@@ -65,7 +65,7 @@ class Startup
         @salaries[title] = amount
       end
     end
-    other_startup.employees.each { |employee| @employees << employee }
+    @employees += other_startup.employees
     other_startup.close
   end
 
