@@ -28,5 +28,16 @@ class Code
     Code.new(random_pegs)
   end
 
+  def self.from_string(string)
+    Code.new(string.split(""))
+  end
+
+  def [](index)
+    @pegs[index]
+  end
+
+  def length
+    @pegs.length
+  end
 
 end
