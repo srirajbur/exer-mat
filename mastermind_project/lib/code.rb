@@ -49,4 +49,19 @@ class Code
     count
   end
 
+  def num_near_matches(guess_code)
+    count = 0
+    (0...guess_code.length).each do |i|
+      if guess_code[i] != self[i] && self.pegs.include?(guess_code[i])
+        count += 1
+      end
+    end
+
+    count
+  end
+
+  def ==(other_code)
+    self.pegs == other_code.pegs
+  end
+
 end
