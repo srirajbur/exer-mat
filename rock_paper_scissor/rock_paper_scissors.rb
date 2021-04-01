@@ -8,15 +8,6 @@ class RockPaperScissor
     @winner = nil
   end
 
-  def get_max_score
-    puts "Enter max score: "
-    max_score = gets.chomp.to_i
-    # if max_score != Integer
-    #   self.get_max_score
-    # end
-    # max_score
-  end
-
   def play
     until self.game_over? do
       print "\n"
@@ -97,8 +88,18 @@ class RockPaperScissor
 
 end
 
-puts "Enter max score: "
-max_score = gets.chomp.to_i
+def get_max_score
+  puts "Enter max score: "
+  max_score = gets.chomp.to_i
+  if max_score < 1
+    print "\n\n"
+    puts "Invalid input"
+    get_max_score
+  end
+  max_score
+end
+
+max_score = get_max_score
 
 game = RockPaperScissor.new(max_score)
 game.play
