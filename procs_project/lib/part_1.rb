@@ -35,3 +35,13 @@ def my_any?(arr, &block)
 
   return false
 end
+
+def my_all?(arr, &block)
+  arr.each do |ele|
+    if !block.call(ele)
+      return false
+    end
+  end
+
+  return true
+end
