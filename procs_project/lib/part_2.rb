@@ -30,3 +30,13 @@ def and_selector(arr, proc_1, proc_2)
 
   selected 
 end
+
+def alternating_mapper(arr, even_block, odd_block)
+  arr.map.with_index do |num, index|
+    if index.even?
+      even_block.call(num)
+    else
+      odd_block.call(num)
+    end
+  end
+end
