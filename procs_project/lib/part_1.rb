@@ -8,8 +8,20 @@ def my_select(arr, &block)
   selected = []
   arr.each do |ele|
     if block.call(ele)
-      selected << ele if block.call(ele)
+      selected << ele
     end
   end
+
   selected
+end
+
+def my_count(arr, &block)
+  count = 0
+  arr.each do |ele|
+    if block.call(ele)
+      count += 1
+    end
+  end
+
+  count
 end
