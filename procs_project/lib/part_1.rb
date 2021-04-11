@@ -45,3 +45,13 @@ def my_all?(arr, &block)
 
   return true
 end
+
+def my_none?(arr, &block)
+  arr.each do |ele|
+    if block.call(ele)
+      return false
+    end
+  end
+
+  return true
+end
