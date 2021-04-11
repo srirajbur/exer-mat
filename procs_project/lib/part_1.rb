@@ -25,3 +25,13 @@ def my_count(arr, &block)
 
   count
 end
+
+def my_any?(arr, &block)
+  arr.each do |ele|
+    if block.call(ele)
+      return true
+    end
+  end
+
+  return false
+end
