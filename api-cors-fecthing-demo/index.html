@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+      height: 100vh;
+      height: 100%; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-image: url(./neutral.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    form{
+      margin: 5rem 0 1rem 0;
+    }
+
+    .gif-container{
+      border: .5rem solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>GET GIFFY</h1>
+  <form id="form">
+    <input type="text" class="user-input">
+    <input type="submit" value="GET">
+  </form>
+  <div class="gif-container">
+    <img src="#">  
+  </div>
+  <script>
+    document.querySelector('#form').addEventListener('submit', displayGif)
+    const img = document.querySelector('img');
+    const invalidInput = 'https://media3.giphy.com/media/p52j8LBZGNsMJPqqVF/giphy.gif?cid=8f8f90584e51e352bdad607938f8837b8ad44619647411a2&rid=giphy.gif&ct=g&cid=8f8f90584e51e352bdad607938f8837b8ad44619647411a2&rid=giphy.gif&ct=g'
+
+    function displayGif(e){
+      e.preventDefault()
+      const userInput = document.querySelector('.user-input').value
+      getGif(userInput)
+      form.reset()     
+    }
+
+    async function getGif(userInput){
+      const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=t8IDIVcXVRGDtCuVjgBfM3gUKMdhHy3n&s=${userInput}`, {mode: 'cors'})
+      const gifData = await response.json()
+      img.src = gifData.data.images.original.url
+    }
+
+    console.log(getGif('red dead redemption'))
+  </script>
+</body>
+</html>
