@@ -7,9 +7,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      task: { text: '' },
+      task: {
+        text: '',
+        id: uniqid(),
+      },
       tasks: [],
-      id: uniqid(),
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -38,7 +40,7 @@ class App extends Component {
   }
 
   render() {
-    const { task, tasks } = this.state;
+    const { tasks } = this.state;
 
     return (
       <div>

@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import MyComponent from './MyComponent';
+import Counter from './Counter';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.onClickBtn = this.onClickBtn.bind(this);
-  }
+    this.state = {
+      mount: true,
+      ignoreProp: 0,
+    };
 
-  onClickBtn() {
-    console.log('Button has been clicked!');
+    this.mountCounter = () => this.setState({ mount: true });
+    this.unmountCounter = () => this.setState({ mount: false });
   }
 
   render() {
     return (
       <div>
-        <MyComponent title="React" onButtonClicked={this.onClickBtn} />
+        <button onClick={this.mountCounter} disabled={this.state.mount}>
+          Mount Counter
+        </button>
+        <button onClick={this.unmountCounter} disabled={!this.state.mount}>
+          Unmount Counter
+        </button>
+        {this.state.mount ? <Counter /> : null}
       </div>
     );
   }

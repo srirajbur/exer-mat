@@ -10,11 +10,16 @@ class Overview extends Component {
     const { tasks } = this.props;
 
     return (
-      <ul>
-        {tasks.map(task => {
-          return <li key={task.id}>{task.text}</li>;
+      <div className="tasks">
+        {tasks.map((task, number) => {
+          return (
+            <div className="task" key={task.id}>
+              {number + 1}. {task.text}
+              <button>X</button>
+            </div>
+          );
         })}
-      </ul>
+      </div>
     );
   }
 }
