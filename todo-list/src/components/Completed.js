@@ -14,8 +14,16 @@ function Completed() {
   return (
     <div className="Completed">
       {completedTodos.map((todo) => {
-        return <Todo key={todo.id} title={todo.title} id={todo.id} />;
+        return (
+          <Todo
+            key={todo.id}
+            title={todo.title}
+            id={todo.id}
+            active={todo.active}
+          />
+        );
       })}
+      {todos.lenght > 0 && <button>Delete All</button>}
     </div>
   );
 }

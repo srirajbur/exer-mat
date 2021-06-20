@@ -1,38 +1,57 @@
-.App {
+.Nav {
   text-align: center;
+  font-size: 2rem;
+  border-bottom: 2px solid grey;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-states {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.state2 {
+  margin: 0 1rem 0 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.state a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.CreateTodo {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type='text'] {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+
+.submit-btn {
+  font-size: 1.6rem;
+}
+
+.All,
+.Active,
+.Completed {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.Todo {
+  margin-left: 2.3rem;
+  font-size: 2rem;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+input[type='checkbox'] {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #555;
 }

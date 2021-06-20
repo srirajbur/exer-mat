@@ -23,7 +23,9 @@ function CreateTodo() {
     <div className="CreateTodo">
       <form onSubmit={addTodo}>
         <input type="text" required onChange={handleChange} />
-        <button type="submit">Add</button>
+        <button className="submit-btn" type="submit">
+          Add
+        </button>
       </form>
     </div>
   );
