@@ -12,10 +12,6 @@ function Todo(props) {
     });
   }
 
-  // function updateTodo(todo){
-
-  // }
-
   function handleChange(e) {
     //find todo
     //update active property
@@ -28,14 +24,11 @@ function Todo(props) {
       }
       return todo;
     });
-    console.log(updatedTodos);
-    // setTodos(updatedTodos);
-    console.log(updatedTodo);
+    setTodos(updatedTodos);
   }
 
   return (
     <div className="Todo" id={props.id}>
-      {/* <input type="checkbox" /> */}
       <input
         checked={props.active ? false : true}
         type="checkbox"
