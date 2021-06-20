@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
+import CreateTodo from './CreateTodo';
+import Todo from './Todo';
 import { TodoContext } from './TodoContext';
 
 function All() {
-  const [cartItems, setCartItems] = useContext(TodoContext);
+  const [todos, setTodos] = useContext(TodoContext);
 
   return (
     <div className="All">
-      {
-        //iterate through todos and display
-      }
+      <CreateTodo />
+      {todos.map((todo, index) => {
+        return <Todo key={index} title={todo.title} />;
+      })}
     </div>
   );
 }

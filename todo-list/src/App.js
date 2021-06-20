@@ -13,7 +13,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={All} />
-          <Route exact path="/acitve" component={Active} />
+          <Route exact path="/active" component={Active} />
           <Route exact path="/completed" component={Completed} />
         </Switch>
       </Router>
