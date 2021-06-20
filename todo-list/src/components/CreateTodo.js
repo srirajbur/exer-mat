@@ -1,21 +1,22 @@
+import { nanoid } from 'nanoid';
 import React, { useContext, useState } from 'react';
 import { TodoContext } from './TodoContext';
 
 function CreateTodo() {
   const [todos, setTodos] = useContext(TodoContext);
-  const [todo, setTodo] = useState({ title: '', active: false });
+  const [todo, setTodo] = useState('');
 
   function addTodo(e) {
     e.preventDefault();
-    console.log(todos);
     setTodos(todos.concat(todo));
-    setTodo({ title: '' });
+    console.log(todos);
+    setTodo('');
     e.target.reset();
   }
 
   function handleChange(e) {
     const newTodo = e.target.value;
-    setTodo({ title: newTodo, active: false });
+    setTodo({ title: newTodo, active: true, id: nanoid() });
   }
 
   return (

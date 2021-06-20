@@ -9,8 +9,15 @@ function All() {
   return (
     <div className="All">
       <CreateTodo />
-      {todos.map((todo, index) => {
-        return <Todo key={index} title={todo.title} />;
+      {todos.map((todo) => {
+        return (
+          <Todo
+            key={todo.id}
+            title={todo.title}
+            id={todo.id}
+            active={todo.active}
+          />
+        );
       })}
     </div>
   );
