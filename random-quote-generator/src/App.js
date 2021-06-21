@@ -24,15 +24,13 @@ function App() {
 
   return (
     <div className="App">
-      <div className="quote-generator">
-        <div className="quote-info">
-          <div className="quote">
-            <div className="quote-text">{`"${quoteText}"`}</div>
-            <div className="quote-author">{quoteAuthor}</div>
-            <button className="random-quote-btn" onClick={fetchData}>
-              Random Quote
-            </button>
-          </div>
+      <div className="quote-info">
+        <div className="quote">
+          <div className="quote-text">{`"${quoteText}"`}</div>
+          <div className="quote-author">{quoteAuthor}</div>
+          <button className="random-quote-btn" onClick={fetchData}>
+            Random Quote
+          </button>
         </div>
       </div>
     </div>
