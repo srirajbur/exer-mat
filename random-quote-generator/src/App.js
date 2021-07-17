@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
+import randomQuote from './randomQuote';
 
 function App() {
-  const { randomQuote } = require('quotegarden');
-
   const [quote, setQuote] = useState({
-    data: [
-      {
-        _id: '5eb17ab3b69dc744b4e81942',
-        quoteText: 'Does this trolley go to Tahiti?',
-        quoteAuthor: 'Arthur Morgan',
-      },
-    ],
+    _id: '5eb17ab3b69dc744b4e81942',
+    quoteText: 'Does this trolley go to Tahiti?',
+    quoteAuthor: 'Arthur Morgan',
   });
 
   async function fetchData() {
@@ -19,8 +14,8 @@ function App() {
     setQuote(newQuote);
   }
 
-  const quoteText = quote.data[0].quoteText;
-  const quoteAuthor = quote.data[0].quoteAuthor;
+  const quoteText = quote.quoteText;
+  const quoteAuthor = quote.quoteAuthor;
 
   return (
     <div className="App">

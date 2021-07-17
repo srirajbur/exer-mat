@@ -30,3 +30,7 @@
   font-weight: bold;
   padding: 1rem;
 }
+
+.random-quote-btn:hover {
+  cursor: pointer;
+}
