@@ -12,12 +12,15 @@ app.use(express.urlencoded({ extended: false }));
 
 //Router
 const users = require('./routes/api/users');
-// const tweets = require('./routes/api/tweets');
+const tweets = require('./routes/api/tweets');
 
 app.use('/api/users', users);
-// app.use('/api/tweets', tweets);
+app.use('/api/tweets', tweets);
 
-app.get('/', (req, res) => res.send('Hello World'));
+//
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
