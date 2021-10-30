@@ -21,3 +21,5 @@ Content-Type: application/json
   "email": "testemail@example.com",
   "password": "test-password"
 }
+
+# "BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2RiNjQxMjNkZTdhMDk5MzliNjJjMyIsImhhbmRsZSI6InRlc3QtaGFuZGxlMSIsImlhdCI6MTYzNTYzMjU2NywiZXhwIjoxNjM1NjM2MTY3fQ.1bc3lGbqHme8yYqbGw-RkxfULU7Fk1ExwJbh0mSZsmI"

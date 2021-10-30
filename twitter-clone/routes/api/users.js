@@ -47,11 +47,11 @@ router.post('/login', (req, res) => {
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
         const payload = { id: user.id, handle: user.handle };
-        const secret = process.env.JWT_SECRET;
+        const JWT_SECRET = process.env.JWT_SECRET;
 
         jwt.sign(
           payload,
-          secret,
+          JWT_SECRET,
           //tell the key to expire in one hour
           { expiresIn: 3600 },
           (err, token) => {
