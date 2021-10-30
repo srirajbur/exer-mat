@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 
 router.post('/register', (req, res) => {
@@ -45,7 +46,21 @@ router.post('/login', (req, res) => {
 
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        res.json({ msg: 'Success' });
+        const payload = { id: user.id, handle: user.handle };
+        const secret = process.env.JWT_SECRET;
+
+        jwt.sign(
+          payload,
+          secret,
+          //tell the key to expire in one hour
+          { expiresIn: 3600 },
+          (err, token) => {
+            res.json({
+              success: true,
+              token: 'Bearer' + token,
+            });
+          }
+        );
       } else {
         return res.status(400).json({ password: 'Incorrect password' });
       }
