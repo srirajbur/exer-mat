@@ -5,16 +5,26 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const User = require('../../models/User');
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 router.get(
   '/current',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    res.json({ msg: 'Success' });
+    res.json({
+      id: req.user.id,
+      handle: req.user.handle,
+      email: req.user.email,
+    });
   }
 );
 
 router.post('/register', (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
   // Check to make sure nobody has already registered with a duplicate email
   User.findOne({ email: req.body.email }).then((user) => {
     if (user) {
@@ -45,6 +55,12 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
+  const { errors, isValid } = validateLoginInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const email = req.body.email;
   const password = req.body.password;
 
@@ -55,7 +71,7 @@ router.post('/login', (req, res) => {
 
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        const payload = { id: user.id, handle: user.handle };
+        const payload = { id: user.id, handle: user.handle, email: user.email };
         const secretOrKey = process.env.JWT_SECRET;
 
         jwt.sign(

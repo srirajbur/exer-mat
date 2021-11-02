@@ -8,7 +8,8 @@ Content-Type: application/json
 {
   "handle": "test-handle1",
   "email": "testemail@example.com",
-  "password": "test-password"
+  "password": "test-password",
+  "password2": "test-password"
 }
 
 
@@ -29,5 +30,5 @@ GET {{hostname}}/current
 Content-Type: application/json
 
 {
-  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2RiNjQxMjNkZTdhMDk5MzliNjJjMyIsImhhbmRsZSI6InRlc3QtaGFuZGxlMSIsImlhdCI6MTYzNTYzNjMxMSwiZXhwIjoxNjM1NjM5OTExfQ.UJEAp9AVfFxir1117TDr1wLsvEeo9j4ZY6yXlc9X7h8"
+  "Authorization": ""
 }
