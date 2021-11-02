@@ -28,7 +28,5 @@ Content-Type: application/json
 # Protected Route
 GET {{hostname}}/current
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2RiNjQxMjNkZTdhMDk5MzliNjJjMyIsImhhbmRsZSI6InRlc3QtaGFuZGxlMSIsImVtYWlsIjoidGVzdGVtYWlsQGV4YW1wbGUuY29tIiwiaWF0IjoxNjM1ODQ0NTI4LCJleHAiOjE2MzU4NDgxMjh9.EZ_oq668fCEnYVlTwrmmESr6_3udwgC8b4AxlLbhdqA
 
-{
-  "Authorization": ""
-}
