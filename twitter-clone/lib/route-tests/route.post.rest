@@ -1,0 +1,34 @@
+@hostname = http://localhost:5000/api/tweets
+
+# CREATE NEW TWEET
+POST  {{hostname}}
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxN2RiNjQxMjNkZTdhMDk5MzliNjJjMyIsImhhbmRsZSI6InRlc3QtaGFuZGxlMSIsImVtYWlsIjoidGVzdGVtYWlsQGV4YW1wbGUuY29tIiwiaWF0IjoxNjM1OTA0MzczLCJleHAiOjE2MzU5MDc5NzN9.lwfL8vL0cufqweiNhEwefeISxWE_XV8Js_BE2XC-36E
+
+{
+  "text": "test tweet 2",
+  "user": "617db64123de7a09939b62c3"
+
+}
+
+###
+
+# GET ALL TWEETS
+GET {{hostname}}
+Content-Type: application/json
+
+###
+
+# GET A TWEET BASED ON ID
+GET {{hostname}}
+Content-Type: application/json
+
+
+
+###
+
+# GET USER TWEETS
+GET {{hostname}}/user/617db64123de7a09939b62c3
+Content-Type: application/json
+
+
