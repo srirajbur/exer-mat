@@ -20,7 +20,7 @@ Content-Type: application/json
 ###
 
 # GET A TWEET BASED ON ID
-GET {{hostname}}
+GET {{hostname}}/6181eeea5b2cd491b3ad60c5
 Content-Type: application/json
 
 
